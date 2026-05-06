@@ -17,5 +17,9 @@ namespace HeartMatcher
         {
             hearts.Add(heart);
         }
+        public void Remove(Heart heart)
+        {
+            hearts.Remove(heart);
+        }
     }
 }

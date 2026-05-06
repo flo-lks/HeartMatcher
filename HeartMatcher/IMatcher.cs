@@ -7,6 +7,6 @@ namespace HeartMatcher
 {
     public interface IMatcher
     {
-        void match(List<Patient> candidates, List<Heart> hearts, MatchManager matchManager);
+        void Match(PatientManager patientManager, HeartManager heartManager, MatchManager matchManager);
     }
 }

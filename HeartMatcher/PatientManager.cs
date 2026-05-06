@@ -7,15 +7,19 @@ namespace HeartMatcher
 {
     public class PatientManager : IManager<Patient>
     {
-        List<Patient> candidates = new List<Patient>();
+        List<Patient> patients = new List<Patient>();
 
         public List<Patient> GetAll()
         {
-            return candidates;
+            return patients;
         }
         public void Add(Patient candidate)
         {
-            candidates.Add(candidate);
+            patients.Add(candidate);
+        }
+        public void Remove(Patient patient)
+        {
+            patients.Remove(patient);
         }
     }
 }

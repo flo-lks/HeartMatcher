@@ -43,16 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hear.cs" />
+    <Compile Include="DistanceCalculator.cs" />
+    <Compile Include="ExtendedMatcher.cs" />
+    <Compile Include="Heart.cs" />
+    <Compile Include="Hospital.cs" />
+    <Compile Include="HospitalManager.cs" />
     <Compile Include="IHeart.cs" />
     <Compile Include="HeartManager.cs" />
+    <Compile Include="IHospital.cs" />
     <Compile Include="IManager.cs" />
     <Compile Include="IMatch.cs" />
     <Compile Include="IMatcher.cs" />
-    <Compile Include="IPerson.cs" />
+    <Compile Include="IPatient.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="MatchManager.cs" />
-    <Compile Include="Persons.cs" />
+    <Compile Include="Patient.cs" />
     <Compile Include="PatientManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagramHeartManager.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

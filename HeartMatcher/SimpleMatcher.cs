@@ -7,13 +7,13 @@ namespace HeartMatcher
 {
     public class SimpleMatcher : IMatcher
     {
-        public void match(List<Patient> patients, List<Heart> hearts, MatchManager matchManager)
+        public void Match(PatientManager patientManager, HeartManager heartManager, MatchManager matchManager)
         {
-            foreach(Patient candidate in patients)
+            foreach(Patient patient in patientManager.GetAll())
             {
-                foreach(Heart heart in hearts)
+                foreach(Heart heart in heartManager.GetAll())
                 {
-                    if (candidate.Bloodtype == heart.Bloodtype) matchManager.Add(new Match(candidate, heart));
+                    if (patient.Bloodtype == heart.Bloodtype) matchManager.Add(new Match(patient, heart));
                 }
             }
         }
