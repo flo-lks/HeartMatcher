@@ -7,7 +7,7 @@ namespace HeartMatcher
 {
     public interface IMatch
     {
-        Patient Patient { get; set; }
-        Heart Heart { get; set; }
+        RecipientPatient RecipientPatient { get; set; }
+        DonorHeart DonorHeart { get; set; }
     }
 }

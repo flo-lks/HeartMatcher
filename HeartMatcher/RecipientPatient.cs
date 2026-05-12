@@ -5,18 +5,20 @@ using System.Text;
 
 namespace HeartMatcher
 {
-    public class Patient : IPatient
+    public class RecipientPatient : IRecipientPatient
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public int Bloodtype { get; set; }
+        public string BloodType { get; set; }
+        public double Bodyweight { get; set; }
         public Hospital Hospital { get; set; }
 
-        public Patient(string firstname, string lastname, int bloodtype, Hospital hospital)
+        public RecipientPatient(string firstname, string lastname, string bloodtype, double bodyweight, Hospital hospital)
         {
             this.Firstname = firstname;
             this.Lastname = lastname;
-            this.Bloodtype = bloodtype;
+            this.BloodType = bloodtype;
+            this.Bodyweight = bodyweight;
             this.Hospital = hospital;
         }
     }

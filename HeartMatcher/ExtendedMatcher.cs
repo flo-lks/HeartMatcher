@@ -10,15 +10,18 @@ namespace HeartMatcher
     {
         public void Match(PatientManager patientManager, HeartManager heartManager, MatchManager matchManager)
         {
-            foreach (Patient patient in patientManager.GetAll().ToList())
+            foreach (RecipientPatient patient in patientManager.GetAll().ToList())
             {
                 double lowestDistance = double.MaxValue;
-                Heart matchHeart = null;
+                DonorHeart matchHeart = null;
 
-                foreach (Heart heart in heartManager.GetAll())
+                foreach (DonorHeart heart in heartManager.GetAll())
                 {
-                    double distance = DistanceCalculator.CalculateAirDistance(patient.Hospital.Lat, patient.Hospital.Lon, heart.Lat, heart.Lon);
+                    if (!CheckBloodType.IsCompatible(patient.BloodType, heart.BloodType)) continue;
 
+                    if (!CheckBodyweight.IsCompatible(patient.Bodyweight, heart.DonorBodyweight)) continue;
+
+                    double distance = DistanceCalculator.CalculateAirDistance(patient.Hospital.Lat, patient.Hospital.Lon, heart.Lat, heart.Lon);
                     if (distance < lowestDistance)
                     {
                         lowestDistance = distance;

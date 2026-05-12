@@ -7,13 +7,13 @@ namespace HeartMatcher
 {
     public class Match : IMatch
     {
-        public Patient Patient {  get; set; }
-        public Heart Heart { get; set; }
+        public RecipientPatient RecipientPatient {  get; set; }
+        public DonorHeart DonorHeart { get; set; }
 
-        public Match(Patient patient, Heart heart)
+        public Match(RecipientPatient patient, DonorHeart heart)
         {
-            this.Patient = patient;
-            this.Heart = heart;
+            this.RecipientPatient = patient;
+            this.DonorHeart = heart;
         }
     }
 }

@@ -27,16 +27,16 @@ namespace HeartMatcher
             hospitalManager.Add(hospital4);
             hospitalManager.Add(hospital5);
 
-            Patient max = new Patient("Max", "Müller", 2, hospital1);
-            Patient anna = new Patient("Anna", "Schmidt", 4, hospital1);
-            Patient leon = new Patient("Leon", "Schneider", 1, hospital2);
-            Patient sophie = new Patient("Sophie", "Fischer", 3, hospital2);
-            Patient paul = new Patient("Paul", "Weber", 2, hospital3);
-            Patient laura = new Patient("Laura", "Meyer", 1, hospital3);
-            Patient tim = new Patient("Tim", "Wagner", 4, hospital4);
-            Patient lena = new Patient("Lena", "Becker", 3, hospital4);
-            Patient jonas = new Patient("Jonas", "Hoffmann", 2, hospital5);
-            Patient emma = new Patient("Emma", "Schulz", 1, hospital5);
+            RecipientPatient max = new RecipientPatient("Max", "Müller", "A+", 80.0, hospital1);
+            RecipientPatient anna = new RecipientPatient("Anna", "Schmidt", "0-", 65.0, hospital1);
+            RecipientPatient leon = new RecipientPatient("Leon", "Schneider", "B+", 75.0, hospital2);
+            RecipientPatient sophie = new RecipientPatient("Sophie", "Fischer", "AB-", 60.0, hospital2);
+            RecipientPatient paul = new RecipientPatient("Paul", "Weber", "A-", 85.0, hospital3);
+            RecipientPatient laura = new RecipientPatient("Laura", "Meyer", "0+", 55.0, hospital3);
+            RecipientPatient tim = new RecipientPatient("Tim", "Wagner", "B-", 90.0, hospital4);
+            RecipientPatient lena = new RecipientPatient("Lena", "Becker", "AB+", 70.0, hospital4);
+            RecipientPatient jonas = new RecipientPatient("Jonas", "Hoffmann", "A+", 78.0, hospital5);
+            RecipientPatient emma = new RecipientPatient("Emma", "Schulz", "0-", 62.0, hospital5);
             personManager.Add(max);
             personManager.Add(anna);
             personManager.Add(leon);
@@ -48,16 +48,16 @@ namespace HeartMatcher
             personManager.Add(jonas);
             personManager.Add(emma);
 
-            Heart heart1 = new Heart(1, 101, 52.4120, 13.1230);
-            Heart heart2 = new Heart(2, 102, 48.2105, 11.6210);
-            Heart heart3 = new Heart(3, 103, 53.4890, 10.0120);
-            Heart heart4 = new Heart(4, 104, 50.8520, 7.1230);
-            Heart heart5 = new Heart(1, 105, 50.1230, 8.5410);
-            Heart heart6 = new Heart(2, 106, 51.3450, 12.3780);
-            Heart heart7 = new Heart(3, 107, 48.7750, 9.1830);
-            Heart heart8 = new Heart(4, 108, 52.3730, 9.7330);
-            Heart heart9 = new Heart(1, 109, 53.0790, 8.8010);
-            Heart heart10 = new Heart(2, 110, 51.2270, 6.7730);
+            DonorHeart heart1 = new DonorHeart("A+", 101, 82.0, 52.4120, 13.1230);
+            DonorHeart heart2 = new DonorHeart("B+", 102, 73.0, 48.2105, 11.6210);
+            DonorHeart heart3 = new DonorHeart("A-", 103, 87.0, 53.4890, 10.0120);
+            DonorHeart heart4 = new DonorHeart("B-", 104, 88.0, 50.8520, 7.1230);
+            DonorHeart heart5 = new DonorHeart("A+", 105, 76.0, 50.1230, 8.5410);
+            DonorHeart heart6 = new DonorHeart("0-", 106, 64.0, 52.5000, 13.4000);
+            DonorHeart heart7 = new DonorHeart("AB-", 107, 62.0, 48.1500, 11.5500);
+            DonorHeart heart8 = new DonorHeart("0+", 108, 56.0, 53.5500, 9.9500);
+            DonorHeart heart9 = new DonorHeart("AB+", 109, 72.0, 50.9500, 6.9500);
+            DonorHeart heart10 = new DonorHeart("0-", 110, 60.0, 50.0500, 8.6000);
             heartManager.Add(heart1);
             heartManager.Add(heart2);
             heartManager.Add(heart3);
@@ -74,7 +74,7 @@ namespace HeartMatcher
 
             foreach (Match match in matchManager.GetAll())
             {
-                Console.WriteLine($"Patient: {match.Patient.Firstname} {match.Patient.Lastname} - HerzId: {match.Heart.Id}");
+                Console.WriteLine($"Patient: {match.RecipientPatient.Firstname} {match.RecipientPatient.Lastname} - HerzId: {match.DonorHeart.Id}");
             }
             Console.ReadKey();
         }

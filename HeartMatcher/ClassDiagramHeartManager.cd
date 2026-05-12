@@ -1,23 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="HeartMatcher.PatientManager">
-    <Position X="6.25" Y="3.75" Width="1.5" />
+    <Position X="8.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAEAAAAAgAAAAAAAAA=</HashCode>
       <FileName>PatientManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HeartMatcher.SimpleMatcher">
-    <Position X="11.5" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SimpleMatcher.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="HeartMatcher.HeartManager">
-    <Position X="8" Y="3.75" Width="1.5" />
+    <Position X="8.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAAAAgAAIAAAAAA=</HashCode>
       <FileName>HeartManager.cs</FileName>
@@ -25,7 +17,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="HeartMatcher.MatchManager">
-    <Position X="9.75" Y="3.75" Width="1.5" />
+    <Position X="10" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>MatchManager.cs</FileName>
@@ -33,31 +25,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="HeartMatcher.Match">
-    <Position X="4" Y="3.75" Width="1.5" />
+    <Position X="5.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCA=</HashCode>
+      <HashCode>AAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Match.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HeartMatcher.Heart">
-    <Position X="2.25" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAACAAAAAAAAAAQAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Heart.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="HeartMatcher.Patient">
-    <Position X="0.5" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAAAAEAAAAAAAAAIAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Patient.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="HeartMatcher.Hospital">
-    <Position X="0.5" Y="8.5" Width="1.5" />
+    <Position X="2.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Hospital.cs</FileName>
@@ -65,7 +41,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="HeartMatcher.HospitalManager">
-    <Position X="2.25" Y="8.5" Width="1.5" />
+    <Position X="10" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAAA=</HashCode>
       <FileName>HospitalManager.cs</FileName>
@@ -73,57 +49,87 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="HeartMatcher.DistanceCalculator">
-    <Position X="4" Y="8.5" Width="1.5" />
+    <Position X="12.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DistanceCalculator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HeartMatcher.ExtendedMatcher">
-    <Position X="13.25" Y="3.75" Width="1.5" />
+    <Position X="12.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ExtendedMatcher.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="HeartMatcher.IPatient">
+  <Class Name="HeartMatcher.DonorHeart">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAQAAAAAgAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>DonorHeart.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeartMatcher.RecipientPatient">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEAAAAAAAAAIAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RecipientPatient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HeartMatcher.CheckBloodType">
+    <Position X="14" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CheckBloodType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HeartMatcher.CheckBodyweight">
+    <Position X="15.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CheckBodyweight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="HeartMatcher.IRecipientPatient">
     <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAEAAAAAAAAAIAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IPatient.cs</FileName>
+      <FileName>IRecipientPatient.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HeartMatcher.IHeart">
-    <Position X="2.25" Y="2" Width="1.5" />
+  <Interface Name="HeartMatcher.IDonorHeart">
+    <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAACAAAAAAAAAAQAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IHeart.cs</FileName>
+      <HashCode>AAACAAAAACAAAAAAAAAAQAAAAAgAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>IDonorHeart.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="HeartMatcher.IManager&lt;T&gt;">
-    <Position X="6.25" Y="2" Width="1.5" />
+    <Position X="8.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>IManager.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="HeartMatcher.IMatcher">
-    <Position X="11.5" Y="2" Width="1.5" />
+    <Position X="12.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IMatcher.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="HeartMatcher.IMatch">
-    <Position X="4" Y="2" Width="1.5" />
+    <Position X="5.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCA=</HashCode>
+      <HashCode>AAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IMatch.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="HeartMatcher.IHospital">
-    <Position X="0.5" Y="6.5" Width="1.5" />
+    <Position X="2.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IHospital.cs</FileName>

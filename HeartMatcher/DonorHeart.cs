@@ -5,17 +5,19 @@ using System.Text;
 
 namespace HeartMatcher
 {
-    public class Heart : IHeart
+    public class DonorHeart : IDonorHeart
     {
-        public int Bloodtype {  get; set; }
+        public string BloodType {  get; set; }
         public int Id { get; set; }
+        public double DonorBodyweight { get; set; }
         public double Lat { get; set; }
         public double Lon { get; set; }
 
-        public Heart(int bloodtype, int id, double lat, double lon)
+        public DonorHeart(string bloodtype, int id, double donorBodyweight,  double lat, double lon)
         {
-            this.Bloodtype = bloodtype;
+            this.BloodType = bloodtype;
             this.Id = id;
+            this.DonorBodyweight = donorBodyweight;
             this.Lat = lat;
             this.Lon = lon;
         }

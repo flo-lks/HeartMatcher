@@ -5,19 +5,19 @@ using System.Text;
 
 namespace HeartMatcher
 {
-    public class PatientManager : IManager<Patient>
+    public class PatientManager : IManager<RecipientPatient>
     {
-        List<Patient> patients = new List<Patient>();
+        List<RecipientPatient> patients = new List<RecipientPatient>();
 
-        public List<Patient> GetAll()
+        public List<RecipientPatient> GetAll()
         {
             return patients;
         }
-        public void Add(Patient candidate)
+        public void Add(RecipientPatient candidate)
         {
             patients.Add(candidate);
         }
-        public void Remove(Patient patient)
+        public void Remove(RecipientPatient patient)
         {
             patients.Remove(patient);
         }

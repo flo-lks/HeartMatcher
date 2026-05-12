@@ -5,11 +5,12 @@ using System.Text;
 
 namespace HeartMatcher
 {
-    public interface IPatient
+    public interface IRecipientPatient
     {
         string Firstname { get; set; }
         string Lastname { get; set; }
-        int Bloodtype { get; set; }
+        string BloodType { get; set; }
+        double Bodyweight { get; set; }
         Hospital Hospital { get; set; }
     }
 }
