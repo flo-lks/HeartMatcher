@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HeartMatcher
+namespace EuroTrans.Core
 {
-    public class Match : IMatch
+    public class Candidate : ICandidate
     {
         public RecipientPatient RecipientPatient {  get; set; }
         public DonorHeart DonorHeart { get; set; }
 
-        public Match(RecipientPatient patient, DonorHeart heart)
+        public Candidate(RecipientPatient patient, DonorHeart heart)
         {
             this.RecipientPatient = patient;
             this.DonorHeart = heart;

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace HeartMatcher
+namespace EuroTrans.Core
 {
     public class ExtendedMatcher : IMatcher
     {
-        public void Match(PatientManager patientManager, HeartManager heartManager, MatchManager matchManager)
+        public void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager matchManager)
         {
             foreach (RecipientPatient patient in patientManager.GetAll().ToList())
             {
@@ -31,7 +31,7 @@ namespace HeartMatcher
 
                 if (matchHeart != null)
                 {
-                    matchManager.Add(new Match(patient, matchHeart));
+                    matchManager.Add(new Candidate(patient, matchHeart));
                     patientManager.Remove(patient);
                     heartManager.Remove(matchHeart);
                 }

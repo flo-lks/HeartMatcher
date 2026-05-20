@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HeartMatcher
+namespace EuroTrans.Core
 {
-    public interface IDonorHeart
+    public interface IHospital
     {
-        string BloodType { get; set; }
-        int Id { get; set; }
-        double DonorBodyweight { get; set; }
+        string Name { get; set; }
         double Lat {  get; set; }
         double Lon { get; set; }
     }

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EuroTrans.Core;
 
-namespace HeartMatcher
+namespace EuroTrans.Console
 {
     internal class Program
     {
@@ -13,7 +14,7 @@ namespace HeartMatcher
             PatientManager personManager = new PatientManager();
             HeartManager heartManager = new HeartManager();
             HospitalManager hospitalManager = new HospitalManager();
-            MatchManager matchManager = new MatchManager();
+            CandidateManager matchManager = new CandidateManager();
 
             // test
             Hospital hospital1 = new Hospital("Charité - Universitätsmedizin Berlin", 52.5255, 13.3783);
@@ -72,11 +73,11 @@ namespace HeartMatcher
             ExtendedMatcher extendedMatcher = new ExtendedMatcher();
             extendedMatcher.Match(personManager, heartManager, matchManager);
 
-            foreach (Match match in matchManager.GetAll())
+            foreach (Candidate match in matchManager.GetAll())
             {
-                Console.WriteLine($"Patient: {match.RecipientPatient.Firstname} {match.RecipientPatient.Lastname} - HerzId: {match.DonorHeart.Id}");
+                System.Console.WriteLine($"Patient: {match.RecipientPatient.Firstname} {match.RecipientPatient.Lastname} - HerzId: {match.DonorHeart.Id}");
             }
-            Console.ReadKey();
+            System.Console.ReadKey();
         }
     }
 }
