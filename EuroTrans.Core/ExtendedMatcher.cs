@@ -8,10 +8,12 @@ namespace EuroTrans.Core
 {
     public class ExtendedMatcher : IMatcher
     {
-        public void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager matchManager)
+        public void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager matchManager, HospitalManager hospitalManager)
         {
             foreach (RecipientPatient patient in patientManager.GetAll().ToList())
             {
+                Hospital patientHospital = hospitalManager.GetAll().FirstOrDefault(h => h.ID == patient.HospitalID);
+
                 double lowestDistance = double.MaxValue;
                 DonorHeart matchHeart = null;
 
@@ -21,7 +23,7 @@ namespace EuroTrans.Core
 
                     if (!CheckBodyweight.IsCompatible(patient.Bodyweight, heart.DonorBodyweight)) continue;
 
-                    double distance = DistanceCalculator.CalculateAirDistance(patient.Hospital.Lat, patient.Hospital.Lon, heart.Lat, heart.Lon);
+                    double distance = DistanceCalculator.CalculateAirDistance(patientHospital.Lat, patientHospital.Lon, heart.Lat, heart.Lon);
                     if (distance < lowestDistance)
                     {
                         lowestDistance = distance;
@@ -38,5 +40,4 @@ namespace EuroTrans.Core
             }
         }
     }
-
 }

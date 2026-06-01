@@ -7,7 +7,7 @@ namespace EuroTrans.Core
 {
     public class PatientManager : IManager<RecipientPatient>
     {
-        List<RecipientPatient> patients = new List<RecipientPatient>();
+        List<RecipientPatient> patients = new ();
 
         public List<RecipientPatient> GetAll()
         {

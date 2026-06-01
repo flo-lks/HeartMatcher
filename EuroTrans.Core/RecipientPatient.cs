@@ -11,15 +11,15 @@ namespace EuroTrans.Core
         public string Lastname { get; set; }
         public string BloodType { get; set; }
         public double Bodyweight { get; set; }
-        public Hospital Hospital { get; set; }
+        public int HospitalID { get; set; }
 
-        public RecipientPatient(string firstname, string lastname, string bloodtype, double bodyweight, Hospital hospital)
+        public RecipientPatient(string firstname, string lastname, string bloodtype, double bodyweight, int hospitalID)
         {
             this.Firstname = firstname;
             this.Lastname = lastname;
             this.BloodType = bloodtype;
             this.Bodyweight = bodyweight;
-            this.Hospital = hospital;
+            this.HospitalID = hospitalID;
         }
     }
 }

@@ -11,6 +11,6 @@ namespace EuroTrans.Core
         string Lastname { get; set; }
         string BloodType { get; set; }
         double Bodyweight { get; set; }
-        Hospital Hospital { get; set; }
+        int HospitalID { get; set; }
     }
 }

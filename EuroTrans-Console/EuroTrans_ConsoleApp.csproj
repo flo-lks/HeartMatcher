@@ -6,11 +6,10 @@
     <RootNamespace>EuroTrans_Console</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>EuroTrans.Console.Program</StartupObject>
+    <StartupObject>EuroTrans_ConsoleApp.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EuroTrans.Core\EuroTrans.Core.csproj" />
+    <ProjectReference Include="..\EuroTrans.Core\EuroTrans_Core.csproj" />
   </ItemGroup>
-
 </Project>
