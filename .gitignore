@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /ClassDiagramHeartManager.png
 /ideen.txt
+/Patients.csv
+/EuroTrans.Core/EuroTransCore-ClassDiagram.cd
