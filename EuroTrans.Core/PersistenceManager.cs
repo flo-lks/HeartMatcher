@@ -8,18 +8,23 @@ namespace EuroTrans.Core
 {
     public class PersistenceManager
     {
-        public void ReadCSVPatients(string path, PatientManager patientManager)
+        public static List<string[]> ReadCSV(string fileName)
         {
-            if (File.Exists(path))
-            {
-                string[] rows = File.ReadAllLines(path);
+            var rows = new List<string[]>();
 
-                foreach (string row in rows.Skip(1))
-                {
-                    string[] cols = row.Split(';');
-                    patientManager.Add(new RecipientPatient (cols[0], cols[1], cols[2], double.Parse(cols[3]), int.Parse(cols[4])));
-                }
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("Path not found");
+                return rows;
             }
+            var lines = File.ReadAllLines(filePath).Skip(1);
+            foreach (var line in lines)
+            {
+                string[] parts = line.Split(";");
+                rows.Add(parts);
+            }
+            return rows;
         }
     }
 }

@@ -12,10 +12,16 @@ namespace EuroTrans.Core
         {
             foreach (RecipientPatient patient in patientManager.GetAll().ToList())
             {
-                Hospital patientHospital = hospitalManager.GetAll().FirstOrDefault(h => h.ID == patient.HospitalID);
+                Hospital? patientHospital = hospitalManager.GetAll().FirstOrDefault(h => h.ID == patient.HospitalID);
 
                 double lowestDistance = double.MaxValue;
-                DonorHeart matchHeart = null;
+                DonorHeart? matchHeart = null;
+
+                if (patientHospital == null)
+                {
+                    Console.WriteLine($"[WARNUNG] Krankenhaus für Patient {patient.Firstname} (ID: {patient.HospitalID}) nicht gefunden!");
+                    continue;
+                }
 
                 foreach (DonorHeart heart in heartManager.GetAll())
                 {
