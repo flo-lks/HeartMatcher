@@ -8,12 +8,12 @@ namespace EuroTrans.Core
 {
     public class ExtendedMatcher : IMatcher
     {
-        public void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager matchManager)
+        public void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager candidateManager, HospitalManager hospitalManager)
         {
             foreach (RecipientPatient patient in patientManager.GetAll().ToList())
             {
                 double lowestDistance = double.MaxValue;
-                DonorHeart matchHeart = null;
+                DonorHeart? matchHeart = null;
 
                 foreach (DonorHeart heart in heartManager.GetAll())
                 {
@@ -31,11 +31,12 @@ namespace EuroTrans.Core
 
                 if (matchHeart != null)
                 {
-                    matchManager.Add(new Candidate(patient, matchHeart));
+                    candidateManager.Add(new Candidate(patient, matchHeart));
                     patientManager.Remove(patient);
                     heartManager.Remove(matchHeart);
                 }
             }
+            candidateManager.WriteCandidatesToCSV("Candidates.csv");
         }
     }
 }

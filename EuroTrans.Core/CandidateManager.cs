@@ -17,5 +17,38 @@ namespace EuroTrans.Core
         {
             candidates.Add(match);
         }
+
+        public void WriteCandidatesToCSV(string path)
+        {
+            List<string[]> rows = new List<string[]>();
+            rows.Add(new string[]
+            {
+                "Patient ID",
+                "Firstname",
+                "Lastname",
+                "BloodType",
+                "Bodyweight",
+                "Hospital",
+                "Heart ID",
+                "BloodType",
+                "Donor Bodyweight"
+            });
+            foreach (Candidate candidate in candidates)
+            {
+                rows.Add(new string[]
+                {
+                    candidate.RecipientPatient.ID.ToString(),
+                    candidate.RecipientPatient.Firstname,
+                    candidate.RecipientPatient.Lastname,
+                    candidate.RecipientPatient.BloodType,
+                    candidate.RecipientPatient.Bodyweight.ToString(),
+                    candidate.RecipientPatient.Hospital.Name,
+                    candidate.DonorHeart.Id.ToString(),
+                    candidate.DonorHeart.BloodType,
+                    candidate.DonorHeart.DonorBodyweight.ToString(),
+                });
+            }
+            PersistenceManager.WriteCSV(path, rows);
+        }
     }
 }
