@@ -10,6 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EuroTrans.Core\EuroTrans_Core.csproj" />
+    <ProjectReference Include="..\EuroTrans.Core\EuroTrans.Core.csproj" />
   </ItemGroup>
 </Project>
