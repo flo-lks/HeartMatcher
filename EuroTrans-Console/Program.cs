@@ -28,7 +28,6 @@ namespace EuroTrans_ConsoleApp
             {
                 Console.WriteLine($"Patient: {match.RecipientPatient.Firstname} {match.RecipientPatient.Lastname} - HerzId: {match.DonorHeart.Id}");
             }
-            candidateManager.WriteCandidatesToCSV("Candidates.csv");
         }
     }
 }
