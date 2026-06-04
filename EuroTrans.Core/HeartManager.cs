@@ -9,12 +9,12 @@ namespace EuroTrans.Core
     {
         public HeartManager()
         {
-            LoadPatientsFromCSV("DonorHearts.csv");
+            LoadHeartsFromCSV("DonorHearts.csv");
         }
 
         List<DonorHeart> hearts = new List<DonorHeart>();
 
-        private void LoadPatientsFromCSV(string path)
+        private void LoadHeartsFromCSV(string path)
         {
             List<string[]> rows = PersistenceManager.ReadCSV(path);
 

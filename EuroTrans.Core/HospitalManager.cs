@@ -9,12 +9,12 @@ namespace EuroTrans.Core
     {
         public HospitalManager()
         {
-            LoadPatientsFromCSV("Hospitals.csv");
+            LoadHospitalsFromCSV("Hospitals.csv");
         }
 
         List<Hospital> hospitals = new List<Hospital>();
 
-        private void LoadPatientsFromCSV(string path)
+        private void LoadHospitalsFromCSV(string path)
         {
             List<string[]> rows = PersistenceManager.ReadCSV(path);
 
