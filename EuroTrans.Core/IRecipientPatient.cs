@@ -7,10 +7,11 @@ namespace EuroTrans.Core
 {
     public interface IRecipientPatient
     {
+        int ID { get; set; }
         string Firstname { get; set; }
         string Lastname { get; set; }
         string BloodType { get; set; }
         double Bodyweight { get; set; }
-        int HospitalID { get; set; }
+        Hospital Hospital { get; set; }
     }
 }

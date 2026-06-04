@@ -26,5 +26,18 @@ namespace EuroTrans.Core
             }
             return rows;
         }
+
+        public static void WriteCSV(string fileName, List<string[]> rows)
+        {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (var row in rows)
+                {
+                    string line = string.Join(";", row);
+                    writer.WriteLine(line);
+                }
+            }
+        }
     }
 }

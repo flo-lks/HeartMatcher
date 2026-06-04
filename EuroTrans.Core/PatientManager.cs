@@ -7,25 +7,27 @@ namespace EuroTrans.Core
 {
     public class PatientManager : IManager<RecipientPatient>
     {
-        public PatientManager()
+        public PatientManager(HospitalManager hospitalManager)
         {
-            LoadPatientsFromCSV("Patients.csv");
+            LoadPatientsFromCSV("Patients.csv", hospitalManager);
         }
 
         List<RecipientPatient> patients = new();
 
-        private void LoadPatientsFromCSV(string path)
+        private void LoadPatientsFromCSV(string path, HospitalManager hospitalManager)
         {
             List<string[]> rows = PersistenceManager.ReadCSV(path);
 
             foreach (var parts in rows)
             {
+                Hospital? hospital = hospitalManager.GetAll().FirstOrDefault(h => h.ID == int.Parse(parts[5]));
                 RecipientPatient patient = new RecipientPatient(
-                    firstname: parts[0],
-                    lastname: parts[1],
-                    bloodtype: parts[2],
-                    bodyweight: double.Parse(parts[3]),
-                    hospitalID: int.Parse(parts[4])
+                    id: int.Parse(parts[0]),
+                    firstname: parts[1],
+                    lastname: parts[2],
+                    bloodtype: parts[3],
+                    bodyweight: double.Parse(parts[4]),
+                    hospital: hospital
                 );
                 Add(patient);
             }

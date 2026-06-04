@@ -11,9 +11,9 @@ namespace EuroTrans_ConsoleApp
     {
         static void Main(string[] args)
         {
-            PatientManager patientManager = new();
             HeartManager heartManager = new();
             HospitalManager hospitalManager = new();
+            PatientManager patientManager = new(hospitalManager);
             CandidateManager candidateManager = new();
 
             ExtendedMatcher extendedMatcher = new();
@@ -28,7 +28,7 @@ namespace EuroTrans_ConsoleApp
             {
                 Console.WriteLine($"Patient: {match.RecipientPatient.Firstname} {match.RecipientPatient.Lastname} - HerzId: {match.DonorHeart.Id}");
             }
-            Console.ReadKey();
+            candidateManager.WriteCandidatesToCSV("Candidates.csv");
         }
     }
 }
