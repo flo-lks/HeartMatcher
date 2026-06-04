@@ -1,5 +1,11 @@
+using EuroTrans.Core;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<PatientManager>();
+builder.Services.AddScoped<HeartManager>();
+builder.Services.AddScoped<ExtendedMatcher>();
+builder.Services.AddScoped<CandidateManager>();
 // Add services to the container.
 
 builder.Services.AddControllers();

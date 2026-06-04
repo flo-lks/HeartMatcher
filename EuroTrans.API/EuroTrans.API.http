@@ -4,3 +4,8 @@ GET {{EuroTrans.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{EuroTrans.API_HostAddress}}/CandidateController/
+Accept: application/json
+
+###
