@@ -8,7 +8,7 @@ namespace EuroTrans.Core
 {
     public class ExtendedMatcher : IMatcher
     {
-        public void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager candidateManager, HospitalManager hospitalManager)
+        public void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager candidateManager)
         {
             foreach (RecipientPatient patient in patientManager.GetAll().ToList())
             {

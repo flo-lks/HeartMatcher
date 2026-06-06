@@ -1,11 +1,6 @@
 @EuroTrans.API_HostAddress = http://localhost:5205
 
-GET {{EuroTrans.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
-
-GET {{EuroTrans.API_HostAddress}}/CandidateController/
+GET {{EuroTrans.API_HostAddress}}/api/candidates/
 Accept: application/json
 
 ###

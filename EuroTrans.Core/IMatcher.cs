@@ -7,6 +7,6 @@ namespace EuroTrans.Core
 {
     public interface IMatcher
     {
-        void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager matchManager, HospitalManager hospitalManager);
+        void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager matchManager);
     }
 }

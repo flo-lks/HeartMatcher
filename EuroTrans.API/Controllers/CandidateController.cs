@@ -7,17 +7,20 @@ namespace EuroTrans.API.Controllers
     [Route("api/[controller]")]
     public class CandidatesController : ControllerBase
     {
+        private readonly HospitalManager _hosptialManager;
         private readonly PatientManager _patientManager;
         private readonly HeartManager _heartManager;
         private readonly CandidateManager _candidateManager;
         private readonly ExtendedMatcher _matcher;
 
         public CandidatesController(
+            HospitalManager hospitalManager,
             PatientManager patientManager,
             HeartManager heartManager,
             CandidateManager candidateManager,
             ExtendedMatcher matcher)
         {
+            _hosptialManager = hospitalManager;
             _patientManager = patientManager;
             _heartManager = heartManager;
             _candidateManager = candidateManager;
@@ -25,18 +28,18 @@ namespace EuroTrans.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Candidate>> GetMatches()
+        public ActionResult<List<Candidate>> GetCandidates()
         {
             _matcher.Match(_patientManager, _heartManager, _candidateManager);
 
-            var result = _candidateManager.GetAll();
+            var candidates = _candidateManager.GetAll();
 
-            if (result == null || !result.Any())
+            if (candidates.Count == 0)
             {
-                return NotFound("Aktuell konnten keine passenden Paare gematcht werden.");
+                return NotFound("no candidates found");
             }
 
-            return Ok(result);
+            return Ok(candidates);
         }
     }
 }

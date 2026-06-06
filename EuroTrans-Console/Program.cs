@@ -17,7 +17,7 @@ namespace EuroTrans_ConsoleApp
             CandidateManager candidateManager = new();
 
             ExtendedMatcher extendedMatcher = new();
-            extendedMatcher.Match(patientManager, heartManager, candidateManager, hospitalManager);
+            extendedMatcher.Match(patientManager, heartManager, candidateManager);
 
             if(candidateManager.GetAll().Count == 0)
             {

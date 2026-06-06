@@ -2,6 +2,7 @@ using EuroTrans.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<HospitalManager>();
 builder.Services.AddScoped<PatientManager>();
 builder.Services.AddScoped<HeartManager>();
 builder.Services.AddScoped<ExtendedMatcher>();
