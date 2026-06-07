@@ -2,11 +2,21 @@ using EuroTrans.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<HospitalManager>();
-builder.Services.AddScoped<PatientManager>();
-builder.Services.AddScoped<HeartManager>();
-builder.Services.AddScoped<ExtendedMatcher>();
-builder.Services.AddScoped<CandidateManager>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+builder.Services.AddSingleton<HospitalManager>();
+builder.Services.AddSingleton<PatientManager>();
+builder.Services.AddSingleton<HeartManager>();
+builder.Services.AddSingleton<ExtendedMatcher>();
+builder.Services.AddSingleton<CandidateManager>();
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -16,6 +26,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -24,6 +37,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 
