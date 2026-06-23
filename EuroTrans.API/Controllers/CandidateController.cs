@@ -5,7 +5,7 @@ namespace EuroTrans.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CandidatesController : ControllerBase
+    public class CandidateController : ControllerBase
     {
         private readonly HospitalManager _hosptialManager;
         private readonly PatientManager _patientManager;
@@ -13,7 +13,7 @@ namespace EuroTrans.API.Controllers
         private readonly CandidateManager _candidateManager;
         private readonly ExtendedMatcher _matcher;
 
-        public CandidatesController(
+        public CandidateController(
             HospitalManager hospitalManager,
             PatientManager patientManager,
             HeartManager heartManager,
