@@ -13,8 +13,9 @@ namespace EuroTrans.Core
         public string BloodType { get; set; }
         public double Bodyweight { get; set; }
         public Hospital Hospital { get; set; }
+        public bool IsMatched { get; set; }
 
-        public RecipientPatient(int id, string firstname, string lastname, string bloodtype, double bodyweight, Hospital hospital)
+        public RecipientPatient(int id, string firstname, string lastname, string bloodtype, double bodyweight, Hospital hospital, bool isMatched)
         {
             this.ID = id;
             this.Firstname = firstname;
@@ -22,6 +23,7 @@ namespace EuroTrans.Core
             this.BloodType = bloodtype;
             this.Bodyweight = bodyweight;
             this.Hospital = hospital;
+            this.IsMatched = isMatched;
         }
     }
 }

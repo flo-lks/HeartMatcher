@@ -10,7 +10,7 @@ namespace EuroTrans.Core
     {
         public void Match(PatientManager patientManager, HeartManager heartManager, CandidateManager candidateManager)
         {
-            foreach (RecipientPatient patient in patientManager.GetAll().ToList())
+            foreach (RecipientPatient patient in patientManager.GetAll().Where(patient => !patient.IsMatched).ToList())
             {
                 double lowestDistance = double.MaxValue;
                 DonorHeart? matchHeart = null;
@@ -32,8 +32,8 @@ namespace EuroTrans.Core
                 if (matchHeart != null)
                 {
                     candidateManager.Add(new Candidate(patient, matchHeart));
-                    patientManager.Remove(patient);
-                    heartManager.Remove(matchHeart);
+                    patient.IsMatched = true;
+                    matchHeart.IsMatched = true;
                 }
             }
             candidateManager.WriteCandidatesToCSV("Candidates.csv");

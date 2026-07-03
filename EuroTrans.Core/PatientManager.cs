@@ -36,7 +36,8 @@ namespace EuroTrans.Core
                 lastname: parts[2],
                 bloodtype: parts[3],
                 bodyweight: bodyweight,
-                hospital: hospital
+                hospital: hospital,
+                isMatched: false
             );
 
             Add(patient);
@@ -46,7 +47,7 @@ namespace EuroTrans.Core
         {
             List<string[]> rows = PersistenceManager.ReadCSV(path);
 
-            foreach (var parts in rows.Skip(1))
+            foreach (var parts in rows)
             {
                 AddPatientFromArray(parts, hospitalManager);
             }

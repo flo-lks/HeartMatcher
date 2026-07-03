@@ -29,7 +29,8 @@ namespace EuroTrans.Core
                     bloodtype: parts[1],
                     donorBodyweight: double.Parse(parts[2]),
                     lat: double.Parse(parts[3], System.Globalization.CultureInfo.InvariantCulture),
-                    lon: double.Parse(parts[4], System.Globalization.CultureInfo.InvariantCulture)
+                    lon: double.Parse(parts[4], System.Globalization.CultureInfo.InvariantCulture),
+                    isMatched: false
                 );
                 Add(heart);
             }

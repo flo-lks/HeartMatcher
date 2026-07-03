@@ -12,5 +12,6 @@ namespace EuroTrans.Core
         double DonorBodyweight { get; set; }
         double Lat {  get; set; }
         double Lon { get; set; }
+        bool IsMatched { get; set; }
     }
 }

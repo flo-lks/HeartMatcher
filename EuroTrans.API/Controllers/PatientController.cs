@@ -52,7 +52,8 @@ namespace EuroTrans.API.Controllers
                 lastname: patientDto.Lastname,
                 bloodtype: patientDto.Bloodtype,
                 bodyweight: patientDto.Bodyweight,
-                hospital: hospital
+                hospital: hospital,
+                isMatched: false
             );
 
             _patientManager.Add(patient);

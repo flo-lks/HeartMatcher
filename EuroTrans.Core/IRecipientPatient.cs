@@ -13,5 +13,6 @@ namespace EuroTrans.Core
         string BloodType { get; set; }
         double Bodyweight { get; set; }
         Hospital Hospital { get; set; }
+        bool IsMatched { get; set; }
     }
 }
