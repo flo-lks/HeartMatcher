@@ -26,7 +26,6 @@ async function fetchPatients() {
     }
 }
 
-console.log("script loaded");
 async function fetchHearts() {
     try {
         const response = await fetch(API_URL_Heart);
@@ -92,3 +91,35 @@ async function fetchCandidates() {
 fetchPatients();
 fetchHearts();
 fetchCandidates();
+
+async function addPatient() {
+
+        const patient = {
+            firstname: document.getElementById("firstname").value,
+            lastname: document.getElementById("lastname").value,
+            bloodtype: document.getElementById("bloodtype").value,
+            bodyweight: parseFloat(document.getElementById("bodyweight").value),
+            hospital: parseInt(document.getElementById("hospital").value)
+        };
+
+        try {
+            const response = await fetch(API_URL_Patient, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(patient)
+            }); 
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`POST fehlgeschlagen: ${response.status} - ${errorText}`);
+            }
+
+            alert("Patient wurde hinzugefügt.");
+            await fetchPatients();
+        } catch (error) {
+            console.error("Fehler in addPatient():", error);
+            alert("Patient konnte nicht gespeichert werden.");
+        }
+}

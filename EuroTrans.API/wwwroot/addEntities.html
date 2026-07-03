@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add Entities</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <h1>Add new Recipientpatient</h1>
+    <form>
+        <label for="firstname">First name:</label>
+        <input type="text" id="firstname" name="firstname"><br>
+
+        <label for="lastname">Last name:</label>
+        <input type="text" id="lastname" name="lastname"><br>
+
+        <label for="bloodtype">Bloodtype:</label>
+        <input type="text" id="bloodtype" name="bloodtype"><br>
+
+        <label for="bodyweight">Bodyweight:</label>
+        <input type="text" id="bodyweight" name="bodyweight"><br>
+
+        <label for="hospital">Hospital:</label>
+        <select id="hospital" name="hospital">
+            <option value="1">
+                Charité Berlin
+            </option>
+            <option value="2">
+                Klinikum rechts der Isar München
+            </option>
+            <option value="3">
+                Uniklinik Hamburg-Eppendorf
+            </option>
+            <option value="4">
+                Uniklinik Köln
+            </option>
+            <option value="5">
+                Uniklinik Frankfurt
+            </option>
+        </select><br>
+
+        <input type="button" id="submitbutton" value="add" onclick="addPatient()">
+    </form>
+
+    <h1>Add new Donorheart</h1>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
