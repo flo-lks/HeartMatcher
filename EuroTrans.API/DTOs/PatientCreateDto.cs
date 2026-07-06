@@ -2,10 +2,11 @@
 {
     public class PatientCreateDto
     {
-            public string Firstname { get; set; } = string.Empty;
-            public string Lastname { get; set; } = string.Empty;
-            public string Bloodtype { get; set; } = string.Empty;
-            public double Bodyweight { get; set; }
-            public int Hospital { get; set; }
+        public string Firstname { get; set; } = string.Empty;
+        public string Lastname { get; set; } = string.Empty;
+        public string BloodType { get; set; } = string.Empty;
+        public double Bodyweight { get; set; }
+        public int Hospital { get; set; }
+        public bool IsMatched { get; set; } = false;
     }
 }

@@ -15,12 +15,12 @@ namespace EuroTrans.Core
         public Hospital Hospital { get; set; }
         public bool IsMatched { get; set; }
 
-        public RecipientPatient(int id, string firstname, string lastname, string bloodtype, double bodyweight, Hospital hospital, bool isMatched)
+        public RecipientPatient(int id, string firstname, string lastname, string bloodType, double bodyweight, Hospital hospital, bool isMatched)
         {
             this.ID = id;
             this.Firstname = firstname;
             this.Lastname = lastname;
-            this.BloodType = bloodtype;
+            this.BloodType = bloodType;
             this.Bodyweight = bodyweight;
             this.Hospital = hospital;
             this.IsMatched = isMatched;

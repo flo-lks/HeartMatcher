@@ -50,7 +50,7 @@ namespace EuroTrans.API.Controllers
                 id: newId,
                 firstname: patientDto.Firstname,
                 lastname: patientDto.Lastname,
-                bloodtype: patientDto.Bloodtype,
+                bloodType: patientDto.BloodType,
                 bodyweight: patientDto.Bodyweight,
                 hospital: hospital,
                 isMatched: false

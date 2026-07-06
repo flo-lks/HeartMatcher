@@ -34,7 +34,7 @@ namespace EuroTrans.Core
                 id: id,
                 firstname: parts[1],
                 lastname: parts[2],
-                bloodtype: parts[3],
+                bloodType: parts[3],
                 bodyweight: bodyweight,
                 hospital: hospital,
                 isMatched: false

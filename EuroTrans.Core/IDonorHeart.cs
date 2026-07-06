@@ -7,8 +7,8 @@ namespace EuroTrans.Core
 {
     public interface IDonorHeart
     {
-        string BloodType { get; set; }
         int Id { get; set; }
+        string BloodType { get; set; }
         double DonorBodyweight { get; set; }
         double Lat {  get; set; }
         double Lon { get; set; }

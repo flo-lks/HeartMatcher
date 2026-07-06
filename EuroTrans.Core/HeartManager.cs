@@ -26,7 +26,7 @@ namespace EuroTrans.Core
             {
                 DonorHeart heart = new(
                     id: int.Parse(parts[0]),
-                    bloodtype: parts[1],
+                    bloodType: parts[1],
                     donorBodyweight: double.Parse(parts[2]),
                     lat: double.Parse(parts[3], System.Globalization.CultureInfo.InvariantCulture),
                     lon: double.Parse(parts[4], System.Globalization.CultureInfo.InvariantCulture),
@@ -43,7 +43,9 @@ namespace EuroTrans.Core
             {
                 "Heart ID",
                 "BloodType",
-                "Donor Bodyweight"
+                "DonorBodyweight",
+                "Lat",
+                "Lon"
             });
             foreach (DonorHeart heart in hearts)
             {
@@ -52,6 +54,8 @@ namespace EuroTrans.Core
                     heart.Id.ToString(),
                     heart.BloodType,
                     heart.DonorBodyweight.ToString(),
+                    heart.Lat.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                    heart.Lon.ToString(System.Globalization.CultureInfo.InvariantCulture)
                 });
             }
             PersistenceManager.WriteCSV(path, rows);

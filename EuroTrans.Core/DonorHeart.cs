@@ -14,10 +14,10 @@ namespace EuroTrans.Core
         public double Lon { get; set; }
         public bool IsMatched { get; set; }
 
-        public DonorHeart(int id, string bloodtype, double donorBodyweight,  double lat, double lon, bool isMatched)
+        public DonorHeart(int id, string bloodType, double donorBodyweight,  double lat, double lon, bool isMatched)
         {
             this.Id = id;
-            this.BloodType = bloodtype;
+            this.BloodType = bloodType;
             this.DonorBodyweight = donorBodyweight;
             this.Lat = lat;
             this.Lon = lon;

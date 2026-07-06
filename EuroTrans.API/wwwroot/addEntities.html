@@ -14,8 +14,8 @@
         <label for="lastname">Last name:</label>
         <input type="text" id="lastname" name="lastname"><br>
 
-        <label for="bloodtype">Bloodtype:</label>
-        <input type="text" id="bloodtype" name="bloodtype"><br>
+        <label for="patientBloodType">Blood type:</label>
+        <input type="text" id="patientBloodType" name="patientBloodType"><br>
 
         <label for="bodyweight">Bodyweight:</label>
         <input type="text" id="bodyweight" name="bodyweight"><br>
@@ -33,10 +33,26 @@
             </option>
         </select><br>
 
-        <input type="button" id="submitbutton" value="add" onclick="addPatient()">
+        <input type="button" id="addPatientButton" value="add" onclick="addPatient()">
     </form>
 
     <h1>Add new Donorheart</h1>
+    <form>
+        <label for="heartBloodType">Blood type:</label>
+        <input type="text" id="heartBloodType" name="heartBloodType"><br>
+
+        <label for="donorBodyweight">Donor bodyweight:</label>
+        <input type="text" id="donorBodyweight" name="donorBodyweight"><br>
+
+        <a><b>Location</b></a><br>
+        <label for="lat">Latitude:</label>
+        <input type="number" id="lat" name="lat"><br>
+
+        <label for="lon">Longitude:</label>
+        <input type="number" id="lon" name="lon"><br>
+
+        <input type="button" id="addHeartButton" value="add" onclick="addHeart()">
+    </form>
 
     <script src="js/script.js"></script>
 </body>
