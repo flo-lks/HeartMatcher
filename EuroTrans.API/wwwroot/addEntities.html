@@ -15,7 +15,7 @@
         <input type="text" id="lastname" name="lastname"><br>
 
         <label for="patientBloodType">Blood type:</label>
-        <input type="text" id="patientBloodType" name="patientBloodType"><br>
+        <input type="text" oninput="this.value = this.value.toUpperCase();" id="patientBloodType" name="patientBloodType"><br>
 
         <label for="bodyweight">Bodyweight:</label>
         <input type="text" id="bodyweight" name="bodyweight"><br>
@@ -39,7 +39,7 @@
     <h1>Add new Donorheart</h1>
     <form>
         <label for="heartBloodType">Blood type:</label>
-        <input type="text" id="heartBloodType" name="heartBloodType"><br>
+        <input type="text" oninput="this.value = this.value.toUpperCase();" id="heartBloodType" name="heartBloodType"><br>
 
         <label for="donorBodyweight">Donor bodyweight:</label>
         <input type="text" id="donorBodyweight" name="donorBodyweight"><br>
