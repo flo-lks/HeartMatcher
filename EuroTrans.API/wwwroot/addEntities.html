@@ -6,53 +6,61 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <h1>Add new Recipientpatient</h1>
-    <form>
-        <label for="firstname">First name:</label>
-        <input type="text" id="firstname" name="firstname"><br>
+    <h1>EuroTrans</h1>
+    <a href="index.html">Main Page</a>
 
-        <label for="lastname">Last name:</label>
-        <input type="text" id="lastname" name="lastname"><br>
+    <div class="addEntities">
+        <div class="addPatient" ´>
+            <h1>Add new Recipientpatient</h1>
+            <form class="gridPatients">
+                <label for="firstname">First name:</label>
+                <input type="text" id="firstname" name="firstname"><br>
 
-        <label for="patientBloodType">Blood type:</label>
-        <input type="text" oninput="this.value = this.value.toUpperCase();" id="patientBloodType" name="patientBloodType"><br>
+                <label for="lastname">Last name:</label>
+                <input type="text" id="lastname" name="lastname"><br>
 
-        <label for="bodyweight">Bodyweight:</label>
-        <input type="text" id="bodyweight" name="bodyweight"><br>
+                <label for="patientBloodType">Blood type:</label>
+                <input type="text" oninput="this.value = this.value.toUpperCase();" id="patientBloodType" name="patientBloodType"><br>
 
-        <label for="hospital">Hospital:</label>
-        <select id="hospital" name="hospital">
-            <option value="1">
-                Charité Berlin
-            </option>
-            <option value="2">
-                LMU-Klinikum München
-            </option>
-            <option value="3">
-                Uniklinik Köln
-            </option>
-        </select><br>
+                <label for="bodyweight">Bodyweight:</label>
+                <input type="text" id="bodyweight" name="bodyweight"><br>
 
-        <input type="button" id="addPatientButton" value="add" onclick="addPatient()">
-    </form>
+                <label for="hospital">Hospital:</label>
+                <select id="hospital" name="hospital">
+                    <option value="1">
+                        Charité Berlin
+                    </option>
+                    <option value="2">
+                        LMU-Klinikum München
+                    </option>
+                    <option value="3">
+                        Uniklinik Köln
+                    </option>
+                </select><br>
 
-    <h1>Add new Donorheart</h1>
-    <form>
-        <label for="heartBloodType">Blood type:</label>
-        <input type="text" oninput="this.value = this.value.toUpperCase();" id="heartBloodType" name="heartBloodType"><br>
+                <input type="button" id="addPatientButton" value="add" onclick="addPatient()">
+            </form>
+        </div>
+        <div class="addDonorHeart">
+            <h1>Add new Donorheart</h1>
+            <form class="gridHearts">
+                <label for="heartBloodType">Blood type:</label>
+                <input type="text" oninput="this.value = this.value.toUpperCase();" id="heartBloodType" name="heartBloodType"><br>
 
-        <label for="donorBodyweight">Donor bodyweight:</label>
-        <input type="text" id="donorBodyweight" name="donorBodyweight"><br>
+                <label for="donorBodyweight">Donor bodyweight:</label>
+                <input type="text" id="donorBodyweight" name="donorBodyweight"><br>
 
-        <a><b>Location</b></a><br>
-        <label for="lat">Latitude:</label>
-        <input type="number" id="lat" name="lat"><br>
+                <a><b>Location</b></a><br>
+                <label for="lat">Latitude:</label>
+                <input type="number" id="lat" name="lat"><br>
 
-        <label for="lon">Longitude:</label>
-        <input type="number" id="lon" name="lon"><br>
+                <label for="lon">Longitude:</label>
+                <input type="number" id="lon" name="lon"><br>
 
-        <input type="button" id="addHeartButton" value="add" onclick="addHeart()">
-    </form>
+                <input type="button" id="addHeartButton" value="add" onclick="addHeart()">
+            </form>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

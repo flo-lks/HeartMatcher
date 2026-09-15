@@ -2,3 +2,21 @@
     font-family: sans-serif;
     margin: 40px;
 }
+
+.lists{
+    display: flex;
+    gap: 20px;
+}
+
+.patientList, .donorHeartList{
+    width: 50%;
+}
+
+.addEntities {
+    display: flex;
+    gap: 20px;
+}
+
+.addPatient, .addDonorHeart{
+    width: 50%;
+}
