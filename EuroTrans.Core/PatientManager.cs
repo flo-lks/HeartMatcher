@@ -73,7 +73,7 @@ namespace EuroTrans.Core
                     patient.Firstname,
                     patient.Lastname,
                     patient.BloodType,
-                    patient.Bodyweight.ToString(),
+                    patient.Bodyweight.ToString(CultureInfo.InvariantCulture),
                     patient.Hospital.ID.ToString(),
                 });
             }

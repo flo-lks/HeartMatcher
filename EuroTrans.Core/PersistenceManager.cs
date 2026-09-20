@@ -8,11 +8,25 @@ namespace EuroTrans.Core
 {
     public class PersistenceManager
     {
+        private static string _dataDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+        public static string DataDirectory
+        {
+            get => _dataDirectory;
+            set
+            {
+                _dataDirectory = Path.GetFullPath(value);
+                Directory.CreateDirectory(_dataDirectory);
+            }
+        }
+
+        private static string ResolvePath(string fileName) => Path.IsPathRooted(fileName) ? fileName : Path.Combine(DataDirectory, fileName);
+
         public static List<string[]> ReadCSV(string fileName)
         {
             var rows = new List<string[]>();
 
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+            string filePath = ResolvePath(fileName);
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("Path not found");
@@ -27,16 +41,20 @@ namespace EuroTrans.Core
             return rows;
         }
 
+        private static readonly object _fileLock = new object();
         public static void WriteCSV(string fileName, List<string[]> rows)
         {
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
-            using (StreamWriter writer = new StreamWriter(filePath))
+            string filePath = ResolvePath(fileName);
+            string tempPath = filePath + ".tmp";
+
+            lock (_fileLock)
             {
-                foreach (var row in rows)
+                using (StreamWriter writer = new StreamWriter(tempPath))
                 {
-                    string line = string.Join(";", row);
-                    writer.WriteLine(line);
+                    foreach (var row in rows)
+                        writer.WriteLine(string.Join(";", row));
                 }
+                File.Move(tempPath, filePath, overwrite: true);
             }
         }
     }

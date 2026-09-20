@@ -2,6 +2,15 @@ using EuroTrans.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var dataPath = builder.Configuration["Storage:DataPath"];
+if (!string.IsNullOrWhiteSpace(dataPath))
+{
+    PersistenceManager.DataDirectory = Path.IsPathRooted(dataPath)
+        ? dataPath
+        : Path.Combine(builder.Environment.ContentRootPath, dataPath);
+}
+Console.WriteLine($"CSV-Datenverzeichnis: {PersistenceManager.DataDirectory}");
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -36,7 +45,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseCors("AllowAll");
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Globalization;
 
 namespace EuroTrans.Core
 {
@@ -41,11 +42,11 @@ namespace EuroTrans.Core
                     candidate.RecipientPatient.Firstname,
                     candidate.RecipientPatient.Lastname,
                     candidate.RecipientPatient.BloodType,
-                    candidate.RecipientPatient.Bodyweight.ToString(),
+                    candidate.RecipientPatient.Bodyweight.ToString(CultureInfo.InvariantCulture),
                     candidate.RecipientPatient.Hospital.Name,
                     candidate.DonorHeart.Id.ToString(),
                     candidate.DonorHeart.BloodType,
-                    candidate.DonorHeart.DonorBodyweight.ToString(),
+                    candidate.DonorHeart.DonorBodyweight.ToString(CultureInfo.InvariantCulture),
                 });
             }
             PersistenceManager.WriteCSV(path, rows);
